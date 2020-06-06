@@ -40,7 +40,7 @@ All commands are prefixed with f!
 * help [command]        -> Sends a message to user in DM with list of available commands on server
 * clear [number]        -> Clears number of messages specified in argument
 
-###### Events
+#### Events
 
 * welcome               -> Sends a DM to user welcoming them to the server
 * Reaction Role Add     -> Gives user a role based on their reaction to message
