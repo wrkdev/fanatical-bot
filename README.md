@@ -5,7 +5,6 @@ A work in progress bot for discord with different pieces of functionality.
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Setup](#setup)
 * [Functionality](#functionality)
 
 ## General info
