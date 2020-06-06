@@ -16,15 +16,6 @@ Project is created with:
 * Node version: 12.13.1
 * Discord.js version: 12.2.0
 * Eslint version: 7.2.0
-	
-## Setup
-To run this project, install it locally using npm:
-
-```
-$ cd [DIRECTORY YOU WANT IT IN]
-$ npm install
-$ npm start
-```
 
 ## Functionality
 
@@ -46,13 +37,11 @@ All commands are prefixed with f!
 * Reaction Role Add     -> Gives user a role based on their reaction to message
 * Reaction Role Remove  -> Removes role from user based on their reaction to message
 
----
 
 ## Build Status
 
 This is still in early stages of development. Change logs can be found [here](https://github.com/wrkdev/fanatical-bot/blob/master/CHANGELOG.md)
 
----
 
 ## Usage
 
