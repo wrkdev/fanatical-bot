@@ -26,7 +26,7 @@ for (const file of commandFiles) {
 bot.once('ready', () => {
     console.log(`${bot.user.username} has logged into the Server!`);
     bot.guilds.cache.forEach(guild => {
-        console.log(`Ready to serve in ${bot.channels.cache.size} channels on ${guild.name}, for a total of ${bot.users.cache.size} users.`);
+        console.log(`Ready to receive commands in ${bot.channels.cache.size} channels on ${guild.name}, for a total of ${bot.users.cache.size} users.`);
         bot.user.setActivity(guild.name, { type: "WATCHING" });
     });
 });
@@ -40,21 +40,22 @@ bot.on('messageReactionAdd', async (reaction, user) => {
             console.log('Something went wrong when fetching the message: ', error);
             return;
         }
+    }
 
-        if (reaction.message.channel.name === 'general') {
-            const guild = reaction.message.guild;
-            const memberWhoReacted = guild.members.cache.find(member => member.id === user.id);
-            let role = null;
-            switch (reaction.emoji.name) {
-                case '🇪':
-                    role = guild.roles.cache.find(role => role.name === 'EU');
-                    memberWhoReacted.roles.add(role);
-                    break;
-                case '🇺':
-                    role = guild.roles.cache.find(role => role.name === 'US');
-                    memberWhoReacted.roles.add(role);
-                    break;
-            }
+    if (reaction.message.channel.name === 'general') {
+        const guild = reaction.message.guild;
+        const memberWhoReacted = guild.members.cache.find(member => member.id === user.id);
+        let role = null;
+        console.info(`Adding role to ${memberWhoReacted}`);
+        switch (reaction.emoji.name) {
+            case '🇪':
+                role = guild.roles.cache.find(role => role.name === 'EU');
+                memberWhoReacted.roles.add(role);
+                break;
+            case '🇺':
+                role = guild.roles.cache.find(role => role.name === 'US');
+                memberWhoReacted.roles.add(role);
+                break;
         }
     }
 });
@@ -68,21 +69,22 @@ bot.on('messageReactionRemove', async (reaction, user) => {
             console.log('Something went wrong when fetching the message: ', error);
             return;
         }
+    }
 
-        if (reaction.message.channel.name === 'general') {
-            const guild = reaction.message.guild;
-            const memberWhoReacted = guild.members.cache.find(member => member.id === user.id);
-            let role = null;
-            switch (reaction.emoji.name) {
-                case '🇪':
-                    role = guild.roles.cache.find(role => role.name === 'EU');
-                    memberWhoReacted.roles.remove(role);
-                    break;
-                case '🇺':
-                    role = guild.roles.cache.find(role => role.name === 'US');
-                    memberWhoReacted.roles.remove(role);
-                    break;
-            }
+    if (reaction.message.channel.name === 'general') {
+        const guild = reaction.message.guild;
+        const memberWhoReacted = guild.members.cache.find(member => member.id === user.id);
+        let role = null;
+        console.info(`Removing role from ${memberWhoReacted}`);
+        switch (reaction.emoji.name) {
+            case '🇪':
+                role = guild.roles.cache.find(role => role.name === 'EU');
+                memberWhoReacted.roles.remove(role);
+                break;
+            case '🇺':
+                role = guild.roles.cache.find(role => role.name === 'US');
+                memberWhoReacted.roles.remove(role);
+                break;
         }
     }
 });
