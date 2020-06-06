@@ -30,7 +30,22 @@ $ npm start
 
 #### Basic Commands
 
-![Basic Features](C:\Users\james\Pictures\Saved Pictures\png\Annotation 2020-06-06 231924.png)
+All commands are prefixed with f!
+
+* serverinfo            -> Displays the server information
+* userinfo [user]       -> Displays user information
+* say [message]         -> Makes an announcement in current channel
+* reload [command]      -> Reloads specified command to clear its cache
+* kick [user]           -> Sends a message to specify which user will be kicked
+* help [command]        -> Sends a message to user in DM with list of available commands on server
+* clear [number]        -> Clears number of messages specified in argument
+
+###### Events
+
+* welcome               -> Sends a DM to user welcoming them to the server
+* Reaction Role Add     -> Gives user a role based on their reaction to message
+* Reaction Role Remove  -> Removes role from user based on their reaction to message
+
 ---
 
 ## Build Status
