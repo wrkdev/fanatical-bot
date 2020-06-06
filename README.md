@@ -54,25 +54,13 @@ This is still in early stages of development. Change logs can be found [here](ht
 
 ---
 
-## Setup
-Clone this repo to your desktop and run `npm install` to install all the dependencies.
-
-You might want to look into `config.json` to make change the port you want to use and set up a SSL certificate.
-
----
-
 ## Usage
-After you clone this repo to your desktop, go to its root directory and run `npm install` to install its dependencies.
-
-Once the dependencies are installed, you can run  `npm start` to start the application.
 
 You will want to invite the bot to your discord server using this link: https://discord.com/oauth2/authorize?client_id=718008997797691422&scope=bot
 
+All server side functions are handled on the hosting platform of the bot.
+
 ---
-
-## Contribute
-
-Let people know how they can contribute into your project. A [contributing guideline](https://github.com/zulip/zulip-electron/blob/master/CONTRIBUTING.md) will be a big plus.
 
 ## License
 >You can check out the full license [here](https://github.com/wrkdev/fanatical-bot/blob/master/LICENSE)
