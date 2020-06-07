@@ -1,6 +1,8 @@
 module.exports = {
     name: 'clear',
     description: 'Clear specified number of messages',
+    usage: 'f!clear [number]',
+    aliases: ['prune', 'purge'],
     args: true,
     execute(message, args) {
         const amount = parseInt(args[0]) + 1;

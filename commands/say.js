@@ -3,7 +3,9 @@ const colors = require("../config/colours.json");
 
 module.exports = {
     name: 'say',
-    description: 'Send an announcement',
+    description: 'Send an announcement to current channel',
+    aliases: ['announce'],
+    usage: 'f!say [message]',
     args: true,
     execute(message, args) {
         message.delete();

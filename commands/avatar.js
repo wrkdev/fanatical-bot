@@ -1,7 +1,7 @@
 module.exports = {
     name: 'avatar',
     description: 'Get avatar of user mentioned',
-    args: true,
+    usage: 'f!avatar [user|null]',
     aliases: ['icon', 'pfp'],
     cooldown: 5,
     execute(message, args) {

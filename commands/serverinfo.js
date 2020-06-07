@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'serverinfo',
     description: 'Get the Server Information',
+    usage: 'f!serverinfo',
+    aliases: ['server'],
     execute(bot, message, args) {
         let sEmbed = new Discord.MessageEmbed()
         .setTitle("Server Information")

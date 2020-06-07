@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'userinfo',
     description: 'Get the User Information',
+    usage: 'f!userinfo [user|null]',
+    aliases: ['user'],
     execute(bot, message, args) {
 
         if (!message.mentions.users.size) {

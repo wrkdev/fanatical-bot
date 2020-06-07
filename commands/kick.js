@@ -1,6 +1,7 @@
 module.exports = {
     name: 'kick',
     description: 'Message about kicking a user',
+    usage: 'f!kick [user]',
     args: true,
     execute(message, args) {
         // grab the "first" mentioned user from the message
