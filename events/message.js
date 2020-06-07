@@ -47,7 +47,7 @@ module.exports = (bot, message) => {
         setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
     }
 
-    console.info(`${message.author.id} sent the command ${command.name} in ${message.channel.name || 'DM'}`);
+    console.info(`${message.author.username} sent the command ${command.name} in ${message.channel.name || 'DM'}`);
 
     // Executing the command
     try {

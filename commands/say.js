@@ -11,8 +11,8 @@ module.exports = {
         message.delete();
         let description = args.join(" ");
         const rEmbed = new Discord.MessageEmbed()
-        .setFooter(`This message has been sent by ${message.author.username}`)
-        .setColor(colors.red)
+        .setColor(colors.orange)
+        // .setThumbnail('https://cdn.discordapp.com/avatars/666375055558705152/4429d4778ecf332843e19e38700b72f3.png')
         .setDescription(description);
         message.channel.send(rEmbed);
     }

@@ -31,10 +31,10 @@ for (const file of commandFiles) {
 
 // Functionality for when the bot is ready to receive commands.
 bot.once('ready', () => {
-    console.log(`${bot.user.username} has logged into the Server!`);
+    console.log(`${bot.user.username} is now online!`);
     bot.guilds.cache.forEach(guild => {
-        console.info(`Ready to receive commands in ${guild.channels.cache.size} channels on ${guild.name}, for a total of ${guild.members.cache.size} users.`);
-        bot.user.setActivity(guild.name, { type: "WATCHING" });
+        console.info(`Ready to receive commands from ${guild.channels.cache.size} channels in ${guild.name}, for a total of ${guild.members.cache.size} users.`);
+        bot.user.setActivity(`f!help`, { type: "PLAYING" });
     });
 });
 
