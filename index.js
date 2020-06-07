@@ -1,10 +1,18 @@
 const fs = require('fs');
 const Discord = require('discord.js');
+// const winston = require('winston');
 const { token } = require('./config/config.json');
+// const logger = winston.createLogger({
+//     transports: [
+//         new winston.transports.Console(),
+//         new winston.transports.File({ filename: 'log.txt' })
+//     ],
+// 	format: winston.format.printf(log => `[${log.level.toUpperCase()}] - ${log.message}`),
+// });
 
 const bot = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
-bot.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+bot.commands = new Discord.Collection();
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
@@ -25,7 +33,7 @@ for (const file of commandFiles) {
 bot.once('ready', () => {
     console.log(`${bot.user.username} has logged into the Server!`);
     bot.guilds.cache.forEach(guild => {
-        console.log(`Ready to receive commands in ${bot.channels.cache.size} channels on ${guild.name}, for a total of ${bot.users.cache.size} users.`);
+        console.info(`Ready to receive commands in ${guild.channels.cache.size} channels on ${guild.name}, for a total of ${guild.members.cache.size} users.`);
         bot.user.setActivity(guild.name, { type: "WATCHING" });
     });
 });
@@ -89,5 +97,12 @@ bot.on('messageReactionRemove', async (reaction, user) => {
 });
 
 process.on('unhandledRejection', error => console.error('Uncaught Promise Rejection', error));
+
+// bot.on('ready', () => logger.log('info', 'The bot is online!'));
+// bot.on('debug', m => logger.log('debug', m));
+// bot.on('warn', m => logger.log('warn', m));
+// bot.on('error', m => logger.log('error', m));
+
+// process.on('uncaughtException', error => logger.log('error', error));
 
 bot.login(token);
