@@ -12,7 +12,6 @@ module.exports = {
         let description = args.join(" ");
         const rEmbed = new Discord.MessageEmbed()
         .setColor(colors.orange)
-        // .setThumbnail('https://cdn.discordapp.com/avatars/666375055558705152/4429d4778ecf332843e19e38700b72f3.png')
         .setDescription(description);
         message.channel.send(rEmbed);
     }
