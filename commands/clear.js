@@ -12,7 +12,7 @@ module.exports = {
         } else if (amount <= 1 || amount > 100) {
             return message.channel.send('you need to input a number between 1 and 99.');
         }
-        console.log(message.channel);
+
         if (message.channel.type !== "dm") {
             message.channel.bulkDelete(amount, true).catch(err => {
                 console.error(err);
