@@ -15,7 +15,7 @@ module.exports = {
                 .setColor('#0099ff')
                 .setTitle("Fanatical's Bot Command List")
                 .setThumbnail('https://cdn.discordapp.com/avatars/718008997797691422/54bf8ba8436a8fd10489691294d76bfc.png')
-                .setDescription('Information on list of available commands');
+                .setDescription(`Information about all the available commands.\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`, 'https://cdn.discordapp.com/avatars/718008997797691422/54bf8ba8436a8fd10489691294d76bfc.png');
             const argumentArray = object.map(command => command);
             argumentArray.forEach(commandInfo => {
                 embedMessage.addFields(
@@ -23,8 +23,7 @@ module.exports = {
                     { name: 'Description', value: commandInfo.description, inline: false }
                 )
             });
-            embedMessage.setTimestamp()
-            .setFooter(`\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`, 'https://cdn.discordapp.com/avatars/718008997797691422/54bf8ba8436a8fd10489691294d76bfc.png');
+            embedMessage.setTimestamp();
             return embedMessage;
         }
 
