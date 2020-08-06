@@ -14,7 +14,12 @@ module.exports = {
         }
 
         if (message.channel.type !== "dm") {
-            message.channel.bulkDelete(amount, true).catch(err => {
+            message.channel.bulkDelete(amount, true).then(() => {
+                message.channel.send(`✅ I have deleted \`${amount} messages\``);
+                setTimeout(function() {
+                    message.channel.bulkDelete(1, true);
+                }, 5000);
+            }).catch(err => {
                 console.error(err);
                 message.channel.send('there was an error trying to prune messages in this channel!');
             });
